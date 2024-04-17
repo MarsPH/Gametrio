@@ -27,9 +27,9 @@ public partial class menu : Form
         }
         else
         {
-            
+
         }
-        
+
 
     }
 
@@ -52,17 +52,13 @@ public partial class menu : Form
 
     }
 
-    private void button3_Click(object sender, EventArgs e)
-    {
-        Settings st = new Settings();
-        st.Show();
-        this.Hide();
-    }
+
 
     private void button2_Click(object sender, EventArgs e)
     {
-        Quickgame qc= new Quickgame();
+        Quickgame qc = new Quickgame();
         qc.Show();
         this.Hide();
     }
+
 }
