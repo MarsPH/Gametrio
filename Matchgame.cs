@@ -110,26 +110,102 @@ namespace Son_of_Duo
 
 
         }
-        int rc = RandomNumber();
+
+        //int rc = RandomNumber();
+        // I changed the whole method, due to major logic problem.
         public void AssignIconsToSquares()
         {
+            Random random = new Random();
+            int numPairs = buttons.Count / 2;
 
-            for (int i = 0; i < buttons.Count; i = i + 2)
+            HashSet<int> selectedIndices = new HashSet<int>();
+            while (selectedIndices.Count < numPairs)
             {
-
-                buttons[i].Text = questions[rc];
-
-                buttons[i].ForeColor = buttons[i].BackColor;
-                questions.RemoveAt(rc);
-
+                int newIndex = random.Next(questions.Count);
+                selectedIndices.Add(newIndex);
             }
-            for (int i = 1; i < buttons.Count; i = i + 2)
+
+            List<string> selectedQuestions = new List<string>();
+            List<string> selectedAnswers = new List<string>();
+
+            foreach (int index in selectedIndices)
             {
-                buttons[i].Text = answers[rc];
-                buttons[i].ForeColor = buttons[i].BackColor;
-                answers.RemoveAt(rc);
+                selectedQuestions.Add(questions[index]);
+                selectedAnswers.Add(answers[index]);
+            }
+
+            List<int> buttonIndices = new List<int>();
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                buttonIndices.Add(i);
+            }
+
+            for (int i = 0; i < buttonIndices.Count; i++)
+            {
+                int swapIndex = random.Next(i, buttonIndices.Count);
+                int temp = buttonIndices[i];
+                buttonIndices[i] = buttonIndices[swapIndex];
+                buttonIndices[swapIndex] = temp;
+            }
+
+            for (int i = 0; i < numPairs; i++)
+            {
+                buttons[buttonIndices[i * 2]].Text = selectedQuestions[i];
+                buttons[buttonIndices[i * 2]].Tag = selectedAnswers[i];
+                buttons[buttonIndices[i * 2]].ForeColor = buttons[buttonIndices[i * 2]].BackColor;
+
+
+                buttons[buttonIndices[i * 2 + 1]].Text = selectedAnswers[i];
+                buttons[buttonIndices[i * 2 + 1]].Tag = selectedQuestions[i];
+                buttons[buttonIndices[i * 2 + 1]].ForeColor = buttons[buttonIndices[i * 2 + 1]].BackColor;
             }
         }
+        /*
+        List<int> indices = new List<int>();
+        for (int i = 0; i < questions.Count; i++)
+        {
+            indices.Add(i);
+        }
+        Random random = new Random();
+        while (indices.Count > 0)
+        {
+            int index = random.Next(indices.Count);
+            int questionIndex = indices[index];
+            indices.RemoveAt(index);
+
+            // To check the even number
+            if (indices.Count == 0)
+                break;
+            index = random.Next(indices.Count);
+            int answerIndex = indices[index];
+            indices.RemoveAt(index);
+
+
+            buttons[questionIndex].Text = questions[questionIndex];
+            buttons[questionIndex].Tag = answers[questionIndex];  
+            buttons[questionIndex].ForeColor = buttons[questionIndex].BackColor;
+
+            buttons[answerIndex].Text = answers[answerIndex];
+            buttons[answerIndex].ForeColor = buttons[answerIndex].BackColor;
+        /*
+        }
+        /*
+        for (int i = 0; i < buttons.Count; i = i + 2)
+        {
+
+            buttons[i].Text = questions[rc];
+
+            buttons[i].ForeColor = buttons[i].BackColor;
+            questions.RemoveAt(rc);
+
+        }
+        for (int i = 1; i < buttons.Count; i = i + 2)
+        {
+            buttons[i].Text = answers[rc];
+            buttons[i].ForeColor = buttons[i].BackColor;
+            answers.RemoveAt(rc);
+        } */
+
 
 
         private void button_Click(object sender, EventArgs e)
@@ -155,7 +231,9 @@ namespace Son_of_Duo
             string firstWord = firstClicked.Text;
             string secondWord = secondClicked.Text;
 
-            bool isMatch = (firstWord == questions[rc] && secondWord == answers[rc]);
+            // Possible fix of Match Logic 
+            bool isMatch = (firstClicked.Tag.ToString() == secondClicked.Text || secondClicked.Tag.ToString() == firstClicked.Text);
+            //bool isMatch = (firstWord == questions[rc] && secondWord == answers[rc]);
 
 
             if (isMatch)
@@ -193,11 +271,17 @@ namespace Son_of_Duo
             secondClicked = null;
         }
 
-       
+
         private void button17_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             quic.Show();
         }
+
+        private void game1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
