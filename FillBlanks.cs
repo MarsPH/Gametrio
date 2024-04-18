@@ -145,6 +145,7 @@ namespace Son_of_Duo
             InitializeProgressBar();
             SelectRandomQuestions();
             NextQuestion();
+            Quickgame.SoundManager.LoadSounds();
 
         }
 
@@ -195,6 +196,7 @@ namespace Son_of_Duo
             int questionIndex = selectedIndexes[currentQuestionIndex];
             if (userAnswer.Equals(allAnswers[questionIndex], StringComparison.OrdinalIgnoreCase))
             {
+                Quickgame.SoundManager.PlayTrue2();
                 lblMessage.Text = "Correct!";
                 this.BackColor = Color.LightGreen;
                 btnSubmit.BackColor = Color.Green;
@@ -206,6 +208,7 @@ namespace Son_of_Duo
             }
             else
             {
+                Quickgame.SoundManager.PlayFalse2();
                 lblMessage.Text = $"Incorrect! The correct answer is '{allAnswers[questionIndex]}'. {explanations[questionIndex]}";
                 this.BackColor = Color.MistyRose;
                 btnSubmit.BackColor = Color.Red;

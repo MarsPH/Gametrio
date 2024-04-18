@@ -131,6 +131,14 @@ namespace Son_of_Duo
         {
             private static readonly SoundPlayer buttonSoundPlayer = new SoundPlayer(@"Resources\button-09a.wav");
             private static readonly SoundPlayer menuButtonSoundPlayer = new SoundPlayer(@"Resources\button-24.wav");
+            private static readonly SoundPlayer pickOneButtonSoundPlayer = new SoundPlayer(@"Resources\pick1.wav");
+            private static readonly SoundPlayer pickTwoButtonSoundPlayer = new SoundPlayer(@"Resources\pick2.wav");
+            private static readonly SoundPlayer trueSoundPlayer = new SoundPlayer(@"Resources\true.wav");
+            private static readonly SoundPlayer trueTwoSoundPlayer = new SoundPlayer(@"Resources\true2.wav");
+            private static readonly SoundPlayer wrongSoundPlayer = new SoundPlayer(@"Resources\wrong.wav");
+            private static readonly SoundPlayer wrongTwoSoundPlayer = new SoundPlayer(@"Resources\wrong2.wav");
+
+
 
             public static void LoadSounds()
             {
@@ -146,6 +154,31 @@ namespace Son_of_Duo
             {
                 menuButtonSoundPlayer.Play();
             }
+            public static void PlayButtonPick1() 
+            {
+                pickOneButtonSoundPlayer.Play();
+            }
+            public static void PlayButtonPick2()
+            {
+                pickTwoButtonSoundPlayer.Play();
+            }
+            public static void PlayTrue()
+            {
+                trueSoundPlayer.Play();
+            }
+            public static void PlayTrue2() 
+            {
+                trueTwoSoundPlayer.Play();
+            }
+            public static void PlayFalse()
+            {
+                wrongSoundPlayer.Play();
+            }
+            public static void PlayFalse2()
+            {
+                wrongTwoSoundPlayer.Play();
+            }
+
         }
     }
 }

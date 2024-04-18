@@ -215,6 +215,7 @@ namespace Son_of_Duo
 
         private void button_Click(object sender, EventArgs e)
         {
+            Quickgame.SoundManager.PlayButtonPick1();
             if (firstClicked != null && secondClicked != null)
                 return;
 
@@ -250,6 +251,7 @@ namespace Son_of_Duo
             else
             {
                 timer1.Start();
+                Quickgame.SoundManager.PlayFalse();
             }
         }
 
@@ -258,7 +260,11 @@ namespace Son_of_Duo
             foreach (Button button in buttons)
             {
                 if (button.ForeColor == button.BackColor)
+                {
+                    Quickgame.SoundManager.PlayTrue();
                     return;
+                }
+
             }
 
             MessageBox.Show("You matched all the icons!", "Congratulations");
@@ -280,12 +286,14 @@ namespace Son_of_Duo
 
         private void button17_Click_1(object sender, EventArgs e)
         {
+            Quickgame.SoundManager.PlayButtonSound();
             this.Hide();
             quic.Show();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
+            Quickgame.SoundManager.PlayButtonSound();
             AssignIconsToSquares();
             label2.Text = Convert.ToString(count);
             button18.Visible = false;
