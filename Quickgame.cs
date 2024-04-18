@@ -14,7 +14,6 @@ namespace Son_of_Duo
 {
     public partial class Quickgame : Form
     {
-        private SoundPlayer buttonSound;
         public Quickgame()
         {
             InitializeComponent(); textBox1.KeyPress += textBox1_KeyPress;
@@ -24,13 +23,11 @@ namespace Son_of_Duo
             button7.Visible = false;
             button7.Enabled = false;
 
-            buttonSound = new SoundPlayer(@"Resources\button-09a.wav");
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            buttonSound.Play();
+            SoundManager.PlayButtonSound();
             this.Hide();
             menu menu = new menu();
             menu.Show();
@@ -48,7 +45,7 @@ namespace Son_of_Duo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            buttonSound.Play();
+            SoundManager.PlayButtonSound();
             if (textBox1.Text.ToLower() == "patrick")
             {
 
@@ -76,7 +73,7 @@ namespace Son_of_Duo
 
         private void button5_Click(object sender, EventArgs e)
         {
-            buttonSound.Play();
+            SoundManager.PlayButtonSound();
             this.Hide();
             game1 obj = new game1();
             obj.Show();
@@ -84,7 +81,7 @@ namespace Son_of_Duo
 
         private void button6_Click(object sender, EventArgs e)
         {
-            buttonSound.Play();
+            SoundManager.PlayButtonSound();
             this.Hide();
             FillBlanks gaame = new FillBlanks();
             gaame.Show();
@@ -92,7 +89,7 @@ namespace Son_of_Duo
 
         private void button7_Click(object sender, EventArgs e)
         {
-            buttonSound.Play();
+            SoundManager.PlayButtonSound();
             if ((textBox1.Text.ToLower() == "oui") || (textBox1.Text.ToLower() == "yes"))
             {
                 label1.Text = "Thats some dedication, Select a game to continue";
@@ -130,7 +127,25 @@ namespace Son_of_Duo
                 button2.PerformClick();
             }
         }
+        public static class SoundManager
+        {
+            private static readonly SoundPlayer buttonSoundPlayer = new SoundPlayer(@"Resources\button-09a.wav");
+            private static readonly SoundPlayer menuButtonSoundPlayer = new SoundPlayer(@"Resources\button-24.wav");
 
+            public static void LoadSounds()
+            {
+                buttonSoundPlayer.Load();
+                menuButtonSoundPlayer.Load();
+            }
 
+            public static void PlayButtonSound()
+            {
+                buttonSoundPlayer.Play();
+            }
+            public static void PlayButtonMenuSound()
+            {
+                menuButtonSoundPlayer.Play();
+            }
+        }
     }
 }
