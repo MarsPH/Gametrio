@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quickgame));
             button1 = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -37,7 +38,9 @@
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -67,29 +70,27 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(351, 387);
             label1.Name = "label1";
-            label1.Size = new Size(482, 87);
+            label1.Size = new Size(590, 99);
             label1.TabIndex = 4;
             label1.Text = "Hi , i think You Know my Name Already\r\n\r\nWhat is my name?\r\n";
             label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Font = new Font("Stencil", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(351, 494);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(212, 36);
+            textBox1.Size = new Size(212, 35);
             textBox1.TabIndex = 5;
             textBox1.TextChanged += textBox1_TextChanged;
-           
             // 
             // button2
             // 
-            button2.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Stencil", 13.8F);
             button2.Location = new Point(351, 536);
             button2.Name = "button2";
             button2.Size = new Size(137, 43);
@@ -111,7 +112,7 @@
             // 
             // button5
             // 
-            button5.Font = new Font("Showcard Gothic", 10.8F);
+            button5.Font = new Font("Stencil", 13.8F);
             button5.Location = new Point(477, 505);
             button5.Name = "button5";
             button5.Size = new Size(210, 53);
@@ -122,7 +123,7 @@
             // 
             // button6
             // 
-            button6.Font = new Font("Showcard Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.Font = new Font("Stencil", 13.8F);
             button6.Location = new Point(477, 564);
             button6.Name = "button6";
             button6.Size = new Size(210, 49);
@@ -133,7 +134,7 @@
             // 
             // button7
             // 
-            button7.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.Font = new Font("Stencil", 13.8F);
             button7.Location = new Point(351, 536);
             button7.Name = "button7";
             button7.Size = new Size(137, 43);
@@ -141,6 +142,17 @@
             button7.Text = "Submit";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-7, 238);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(361, 551);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
             // 
             // Quickgame
             // 
@@ -150,6 +162,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(982, 788);
             ControlBox = false;
+            Controls.Add(pictureBox2);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -163,6 +176,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quickgame";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,5 +193,6 @@
         private Button button5;
         private Button button6;
         private Button button7;
+        private PictureBox pictureBox2;
     }
 }

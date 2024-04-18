@@ -41,12 +41,12 @@ partial class menu
         // 
         button1.BackColor = Color.Transparent;
         button1.FlatStyle = FlatStyle.Flat;
-        button1.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        button1.Font = new Font("Stencil", 16.2F);
         button1.ForeColor = Color.Black;
         button1.Location = new Point(452, 362);
         button1.Margin = new Padding(0);
         button1.Name = "button1";
-        button1.Size = new Size(120, 49);
+        button1.Size = new Size(125, 54);
         button1.TabIndex = 0;
         button1.Text = "Exit";
         button1.UseVisualStyleBackColor = false;
@@ -56,10 +56,10 @@ partial class menu
         // 
         button2.BackColor = Color.Transparent;
         button2.FlatStyle = FlatStyle.Flat;
-        button2.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        button2.Location = new Point(420, 207);
+        button2.Font = new Font("Stencil", 16.2F);
+        button2.Location = new Point(389, 207);
         button2.Name = "button2";
-        button2.Size = new Size(174, 70);
+        button2.Size = new Size(250, 75);
         button2.TabIndex = 4;
         button2.Text = "Play Game";
         button2.UseVisualStyleBackColor = false;
@@ -69,10 +69,10 @@ partial class menu
         // 
         button4.BackColor = Color.Transparent;
         button4.FlatStyle = FlatStyle.Flat;
-        button4.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        button4.Location = new Point(420, 283);
+        button4.Font = new Font("Stencil", 16.2F);
+        button4.Location = new Point(389, 288);
         button4.Name = "button4";
-        button4.Size = new Size(174, 61);
+        button4.Size = new Size(250, 66);
         button4.TabIndex = 6;
         button4.Text = "How to Play";
         button4.UseVisualStyleBackColor = false;

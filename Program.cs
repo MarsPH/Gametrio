@@ -17,7 +17,7 @@ static class Program
         ApplicationConfiguration.Initialize();
         SoundManager.LoadSounds();
 
-        Application.Run(new menu());
+        Application.Run(new FillBlanks());
 
     }    
 }

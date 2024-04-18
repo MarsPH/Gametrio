@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowToPlay));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             label1 = new Label();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -79,11 +82,23 @@
             // label2
             // 
             label2.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(414, 57);
+            label2.Location = new Point(426, 280);
             label2.Name = "label2";
             label2.Size = new Size(326, 289);
             label2.TabIndex = 4;
             label2.Text = "MATCH MADNESS IS A GAME WHERE THERE WILL BE 16 TILES AND PLAYER WILL HAVE TO MATCH THE CORRECT TILES BY THE READING THE WORDS ON THE TILES\"";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(89, 219);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(331, 389);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+       
             // 
             // HowToPlay
             // 
@@ -92,6 +107,7 @@
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(982, 788);
             ControlBox = false;
+            Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button3);
@@ -101,6 +117,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Howtoplay";
             Load += Howtoplay_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,5 +129,6 @@
         private Button button3;
         private Label label1;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }

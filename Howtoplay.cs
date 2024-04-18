@@ -18,6 +18,7 @@ namespace Son_of_Duo
         {
             InitializeComponent();
             label2.Hide();
+            pictureBox1.Visible = false;
         }
 
         private void Howtoplay_Load(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace Son_of_Duo
         {
             Son_of_Duo.Quickgame.SoundManager.PlayButtonSound();
             label2.Show();
+            pictureBox1.Visible = true;
             label2.Text = "MATCH MADNESS IS A GAME WHERE THERE WILL BE 16 TILES AND PLAYER WILL HAVE TO MATCH THE CORRECT TILES BY THE READING THE WORDS ON THE TILES";
         }
 
@@ -46,7 +48,10 @@ namespace Son_of_Duo
         {
             Son_of_Duo.Quickgame.SoundManager.PlayButtonSound();
             label2.Show();
+            pictureBox1.Visible = true;
             label2.Text = "PLAYER WILL BE ASKED DIFFERENT QUESTION WITH ONE MISSING WORD IN BETWEEN AND PLAYER WILL HAVE TO ANSWER IT CORRECTLY IN ORDER TO WIN THE GAME";
         }
+
+      
     }
 }

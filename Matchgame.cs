@@ -299,6 +299,12 @@ namespace Son_of_Duo
             button18.Visible = false;
         }
 
+        private void game1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        }
     }
-}
 

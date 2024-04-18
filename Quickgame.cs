@@ -22,6 +22,7 @@ namespace Son_of_Duo
             button6.Visible = false;
             button7.Visible = false;
             button7.Enabled = false;
+            pictureBox2.Visible = false;    
 
         }
 
@@ -54,6 +55,8 @@ namespace Son_of_Duo
                 button2.Visible = false;
                 button7.Visible = true;
                 button7.Enabled = true;
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = true;
 
 
 

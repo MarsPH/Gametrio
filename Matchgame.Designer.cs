@@ -219,26 +219,26 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Stencil", 13.8F);
             label1.Location = new Point(286, 30);
             label1.Name = "label1";
-            label1.Size = new Size(120, 36);
+            label1.Size = new Size(111, 27);
             label1.TabIndex = 16;
             label1.Text = "Level:";
             // 
             // label2
             // 
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Showcard Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(386, 18);
+            label2.Font = new Font("Stencil", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(360, 30);
             label2.Name = "label2";
-            label2.Size = new Size(32, 59);
+            label2.Size = new Size(23, 30);
             label2.TabIndex = 17;
             label2.Text = "1";
             // 
             // button17
             // 
-            button17.Font = new Font("Showcard Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button17.Font = new Font("Stencil", 13.8F);
             button17.Location = new Point(12, 12);
             button17.Name = "button17";
             button17.Size = new Size(94, 29);
@@ -249,7 +249,7 @@
             // 
             // button18
             // 
-            button18.Font = new Font("Showcard Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button18.Font = new Font("Stencil", 13.8F);
             button18.Location = new Point(810, 18);
             button18.Name = "button18";
             button18.Size = new Size(160, 29);
@@ -288,6 +288,7 @@
             Name = "game1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Guess the Tiles";
+            Load += game1_Load;
             ResumeLayout(false);
         }
 
