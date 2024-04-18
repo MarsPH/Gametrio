@@ -151,8 +151,8 @@ namespace Son_of_Duo
         private void InitializeProgressBar()
         {
             progressBar = new ProgressBar();
-            progressBar.Location = new Point(207, 380);
-            progressBar.Size = new Size(530, 60);
+            progressBar.Location = new Point(260, 450); // changed the position
+            progressBar.Size = new Size(665, 90); // changed the scale
             progressBar.Maximum = totalQuestionsToAsk;
             this.Controls.Add(progressBar);
         }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Son_of_Duo
 {
     public partial class Quickgame : Form
     {
+        private SoundPlayer buttonSound;
         public Quickgame()
         {
             InitializeComponent(); textBox1.KeyPress += textBox1_KeyPress;
@@ -22,10 +24,13 @@ namespace Son_of_Duo
             button7.Visible = false;
             button7.Enabled = false;
 
+            buttonSound = new SoundPlayer(@"Resources\button-09a.wav");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            buttonSound.Play();
             this.Hide();
             menu menu = new menu();
             menu.Show();
@@ -43,6 +48,7 @@ namespace Son_of_Duo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            buttonSound.Play();
             if (textBox1.Text.ToLower() == "patrick")
             {
 
@@ -61,8 +67,6 @@ namespace Son_of_Duo
                 label1.Text = "I am Patrick , you dumb creature \n write it so you dont forget again";
                 textBox1.Text = "";
             }
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -72,14 +76,15 @@ namespace Son_of_Duo
 
         private void button5_Click(object sender, EventArgs e)
         {
+            buttonSound.Play();
             this.Hide();
             game1 obj = new game1();
             obj.Show();
-
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            buttonSound.Play();
             this.Hide();
             FillBlanks gaame = new FillBlanks();
             gaame.Show();
@@ -87,6 +92,7 @@ namespace Son_of_Duo
 
         private void button7_Click(object sender, EventArgs e)
         {
+            buttonSound.Play();
             if ((textBox1.Text.ToLower() == "oui") || (textBox1.Text.ToLower() == "yes"))
             {
                 label1.Text = "Thats some dedication, Select a game to continue";
@@ -122,7 +128,6 @@ namespace Son_of_Duo
             if (e.KeyChar == (char)Keys.Return)
             {
                 button2.PerformClick();
-              
             }
         }
 
