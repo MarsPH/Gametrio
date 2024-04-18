@@ -252,7 +252,7 @@
             button18.Font = new Font("Stencil", 13.8F);
             button18.Location = new Point(810, 18);
             button18.Name = "button18";
-            button18.Size = new Size(160, 29);
+            button18.Size = new Size(160, 39);
             button18.TabIndex = 19;
             button18.Text = "Next Level";
             button18.UseVisualStyleBackColor = true;

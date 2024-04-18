@@ -40,10 +40,11 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(12, 12);
+            button1.Font = new Font("Stencil", 7.8F);
+            button1.Location = new Point(26, 13);
+            button1.Margin = new Padding(6, 4, 6, 4);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(86, 30);
             button1.TabIndex = 0;
             button1.Text = "< Back";
             button1.UseVisualStyleBackColor = true;
@@ -51,10 +52,11 @@
             // 
             // button2
             // 
-            button2.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(12, 65);
+            button2.Font = new Font("Stencil", 16.2F);
+            button2.Location = new Point(26, 104);
+            button2.Margin = new Padding(6, 4, 6, 4);
             button2.Name = "button2";
-            button2.Size = new Size(236, 47);
+            button2.Size = new Size(309, 58);
             button2.TabIndex = 1;
             button2.Text = "Match Madness";
             button2.UseVisualStyleBackColor = true;
@@ -62,10 +64,11 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(12, 118);
+            button3.Font = new Font("Stencil", 16.2F);
+            button3.Location = new Point(26, 170);
+            button3.Margin = new Padding(6, 4, 6, 4);
             button3.Name = "button3";
-            button3.Size = new Size(236, 50);
+            button3.Size = new Size(309, 53);
             button3.TabIndex = 2;
             button3.Text = "Fill In The Blanks";
             button3.UseVisualStyleBackColor = true;
@@ -74,17 +77,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(475, 70);
+            label1.Location = new Point(1009, 112);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 33);
             label1.TabIndex = 3;
             // 
             // label2
             // 
-            label2.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(426, 280);
+            label2.Font = new Font("Stencil", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(487, 221);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(326, 289);
+            label2.Size = new Size(439, 481);
             label2.TabIndex = 4;
             label2.Text = "MATCH MADNESS IS A GAME WHERE THERE WILL BE 16 TILES AND PLAYER WILL HAVE TO MATCH THE CORRECT TILES BY THE READING THE WORDS ON THE TILES\"";
             // 
@@ -92,17 +97,17 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(89, 219);
+            pictureBox1.Location = new Point(70, 293);
+            pictureBox1.Margin = new Padding(6, 4, 6, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(331, 389);
+            pictureBox1.Size = new Size(405, 409);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-       
             // 
             // HowToPlay
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(17F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(982, 788);
@@ -113,6 +118,8 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            Font = new Font("Stencil", 16.2F);
+            Margin = new Padding(6, 4, 6, 4);
             Name = "HowToPlay";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Howtoplay";
