@@ -1,3 +1,4 @@
+using static Son_of_Duo.Quickgame.SoundManager;
 namespace Son_of_Duo;
 
 public partial class menu : Form
@@ -18,6 +19,7 @@ public partial class menu : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
+        Quickgame.SoundManager.PlayButtonMenuSound();
         var confirmResult = MessageBox.Show("Do you really want to Exit ??",
                                      "Exit the Game !",
                                      MessageBoxButtons.YesNo);
@@ -45,6 +47,7 @@ public partial class menu : Form
 
     private void button4_Click(object sender, EventArgs e)
     {
+        Quickgame.SoundManager.PlayButtonMenuSound();
         HowToPlay htp = new HowToPlay();
 
         htp.Show();
@@ -56,6 +59,7 @@ public partial class menu : Form
 
     private void button2_Click(object sender, EventArgs e)
     {
+        Quickgame.SoundManager.PlayButtonMenuSound();
         Quickgame qc = new Quickgame();
         qc.Show();
         this.Hide();

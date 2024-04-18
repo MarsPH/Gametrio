@@ -145,14 +145,15 @@ namespace Son_of_Duo
             InitializeProgressBar();
             SelectRandomQuestions();
             NextQuestion();
+            Quickgame.SoundManager.LoadSounds();
 
         }
 
         private void InitializeProgressBar()
         {
             progressBar = new ProgressBar();
-            progressBar.Location = new Point(207, 380);
-            progressBar.Size = new Size(530, 60);
+            progressBar.Location = new Point(260, 450); // changed the position
+            progressBar.Size = new Size(665, 90); // changed the scale
             progressBar.Maximum = totalQuestionsToAsk;
             this.Controls.Add(progressBar);
         }
@@ -195,6 +196,7 @@ namespace Son_of_Duo
             int questionIndex = selectedIndexes[currentQuestionIndex];
             if (userAnswer.Equals(allAnswers[questionIndex], StringComparison.OrdinalIgnoreCase))
             {
+                Quickgame.SoundManager.PlayTrue2();
                 lblMessage.Text = "Correct!";
                 this.BackColor = Color.LightGreen;
                 btnSubmit.BackColor = Color.Green;
@@ -206,6 +208,7 @@ namespace Son_of_Duo
             }
             else
             {
+                Quickgame.SoundManager.PlayFalse2();
                 lblMessage.Text = $"Incorrect! The correct answer is '{allAnswers[questionIndex]}'. {explanations[questionIndex]}";
                 this.BackColor = Color.MistyRose;
                 btnSubmit.BackColor = Color.Red;
@@ -225,6 +228,7 @@ namespace Son_of_Duo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Quickgame.SoundManager.PlayButtonSound();
             this.Hide();
             menu menu = new menu();
             menu.Show();
