@@ -27,6 +27,7 @@ namespace Son_of_Duo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Son_of_Duo.Quickgame.SoundManager.PlayButtonSound();
             this.Close();
             menu menu = new menu();
             menu.Show();
@@ -36,12 +37,14 @@ namespace Son_of_Duo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Son_of_Duo.Quickgame.SoundManager.PlayButtonSound();
             label2.Show();
             label2.Text = "MATCH MADNESS IS A GAME WHERE THERE WILL BE 16 TILES AND PLAYER WILL HAVE TO MATCH THE CORRECT TILES BY THE READING THE WORDS ON THE TILES";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Son_of_Duo.Quickgame.SoundManager.PlayButtonSound();
             label2.Show();
             label2.Text = "PLAYER WILL BE ASKED DIFFERENT QUESTION WITH ONE MISSING WORD IN BETWEEN AND PLAYER WILL HAVE TO ANSWER IT CORRECTLY IN ORDER TO WIN THE GAME";
         }
