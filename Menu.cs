@@ -23,7 +23,7 @@ public partial class menu : Form
                                      MessageBoxButtons.YesNo);
         if (confirmResult == DialogResult.Yes)
         {
-            this.Close();
+          Environment.Exit(0);
         }
         else
         {

@@ -1,7 +1,9 @@
 ﻿using Son_of_Duo;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace Son_of_Duo
@@ -108,13 +110,16 @@ namespace Son_of_Duo
 
             AssignIconsToSquares();
 
+            button18.Visible = false;
 
         }
+        int count = 0;
 
         //int rc = RandomNumber();
         // I changed the whole method, due to major logic problem.
         public void AssignIconsToSquares()
         {
+            count++;
             Random random = new Random();
             int numPairs = buttons.Count / 2;
 
@@ -257,7 +262,8 @@ namespace Son_of_Duo
             }
 
             MessageBox.Show("You matched all the icons!", "Congratulations");
-            Close();
+            button18.Visible = true;
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -278,10 +284,13 @@ namespace Son_of_Duo
             quic.Show();
         }
 
-        private void game1_Load(object sender, EventArgs e)
+        private void button18_Click(object sender, EventArgs e)
         {
-
+            AssignIconsToSquares();
+            label2.Text = Convert.ToString(count);
+            button18.Visible = false;
         }
+
     }
 }
 

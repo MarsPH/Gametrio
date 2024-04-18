@@ -15,11 +15,12 @@ namespace Son_of_Duo
     {
         public Quickgame()
         {
-            InitializeComponent();
-           
+            InitializeComponent(); textBox1.KeyPress += textBox1_KeyPress;
+
             button5.Visible = false;
             button6.Visible = false;
             button7.Visible = false;
+            button7.Enabled = false;
 
         }
 
@@ -49,6 +50,7 @@ namespace Son_of_Duo
                 textBox1.Text = "";
                 button2.Visible = false;
                 button7.Visible = true;
+                button7.Enabled = true;
 
 
 
@@ -77,7 +79,8 @@ namespace Son_of_Duo
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {this.Hide();
+        {
+            this.Hide();
             FillBlanks gaame = new FillBlanks();
             gaame.Show();
         }
@@ -90,7 +93,7 @@ namespace Son_of_Duo
                 textBox1.Text = "";
                 button7.Hide();
                 textBox1.Hide();
-               
+
                 button5.Visible = true;
                 button6.Visible = true;
 
@@ -113,5 +116,16 @@ namespace Son_of_Duo
         {
 
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                button2.PerformClick();
+              
+            }
+        }
+
+
     }
 }
