@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 
 namespace Son_of_Duo
@@ -144,14 +145,14 @@ namespace Son_of_Duo
             InitializeProgressBar();
             SelectRandomQuestions();
             NextQuestion();
-          
+
         }
 
         private void InitializeProgressBar()
         {
             progressBar = new ProgressBar();
-            progressBar.Location = new Point(207, 380);  
-            progressBar.Size = new Size(530, 60);      
+            progressBar.Location = new Point(207, 380);
+            progressBar.Size = new Size(530, 60);
             progressBar.Maximum = totalQuestionsToAsk;
             this.Controls.Add(progressBar);
         }
@@ -182,7 +183,7 @@ namespace Son_of_Duo
             else
             {
                 lblQuestion.Text = "Game Over!";
-                
+
                 btnSubmit.Enabled = false;
                 this.BackColor = SystemColors.Control;
                 btnSubmit.BackColor = SystemColors.Control;
@@ -198,7 +199,7 @@ namespace Son_of_Duo
                 this.BackColor = Color.LightGreen;
                 btnSubmit.BackColor = Color.Green;
 
-                await Task.Delay(1000); 
+                await Task.Delay(1000);
 
                 currentQuestionIndex++;
                 NextQuestion();
@@ -219,7 +220,7 @@ namespace Son_of_Duo
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -228,5 +229,15 @@ namespace Son_of_Duo
             menu menu = new menu();
             menu.Show();
         }
+
+
+        // Now enter will also submit
+        private void txtAnswer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter) {
+                btnSubmit.PerformClick();
+            }
+        }
     }
+
 }
